@@ -29,50 +29,50 @@
                         <!-- Grupo: Nombre -->
                         <div class="formulario__grupo" id="grupo__nombre">
                             <label for="nombre" class="formulario__label">Nombre</label>
-                            
-                            <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="ingrese nom completo" autofocus>
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                            
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="ingrese nom completo" autofocus>
+                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                            </div>
                             <p class="formulario__input-error">El nombre tiene que ser de 4 a 16 dígitos y solo puede contener  letras.</p>
                         </div>
 
                         <!-- Grupo: DNI -->
                         <div class="formulario__grupo" id="grupo__dni">
                             <label for="dni" class="formulario__label">DNI</label>
-                            
-                            <input type="text" class="formulario__input" name="dni" id="dni" placeholder="ingrese nro dni">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                            
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="dni" id="dni" placeholder="ingrese nro dni">
+                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                            </div>
                             <p class="formulario__input-error">El DNI tiene que ser de 8 a 11 dígitos.</p>
                         </div>
 
                         <!-- Grupo: DNI 2 -->
                         <div class="formulario__grupo" id="grupo__dni2">
                             <label for="dni2" class="formulario__label">Repetir DNI</label>
-                            
-                            <input type="text" class="formulario__input" name="dni2" id="dni2" placeholder="ingrese nro dni">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                            
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="dni2" id="dni2" placeholder="ingrese nro dni">
+                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                            </div>  
                             <p class="formulario__input-error">Ambas DNI deben ser iguales.</p>
                         </div>
 
                         <!-- Grupo: Correo Electronico -->
                         <div class="formulario__grupo" id="grupo__correo">
                             <label for="correo" class="formulario__label">Correo Electrónico</label>
-                            
-                            <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                            
+                            <div class="formulario__grupo-input">
+                                <input type="email" class="formulario__input" name="correo" id="correo" placeholder="correo@correo.com">
+                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                            </div> 
                             <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
                         </div>
 
                         <!-- Grupo: NickName -->
                         <div class="formulario__grupo" id="grupo__nickname">
                             <label for="nikname" class="formulario__label">NickName</label>
-                            
-                            <input type="text" class="formulario__input" name="nickname" id="nickname" placeholder="Apodo">
-                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                            
+                            <div class="formulario__grupo-input">
+                                <input type="text" class="formulario__input" name="nickname" id="nickname" placeholder="Apodo">
+                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                            </div>
                             <p class="formulario__input-error">El Apodo tiene qe ser no maximo de 14 dígitos.</p>
                         </div>
 

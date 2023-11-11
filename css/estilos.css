@@ -22,7 +22,9 @@ body {
 	cursor: pointer;
 }
 
-
+.formulario__grupo-input {
+	position: relative;
+}
 
 .formulario__input {
 	width: 100%;
