@@ -7,12 +7,7 @@ body {
 	background: #E5E5E5;
 }
 
-main {
-	max-width: 800px;
-	width: 90%;
-	margin: auto;
-	padding: 40px;
-}
+
 
 .formulario {
 	display: grid;
@@ -27,9 +22,7 @@ main {
 	cursor: pointer;
 }
 
-.formulario__grupo-input {
-	position: relative;
-}
+
 
 .formulario__input {
 	width: 100%;
@@ -67,9 +60,7 @@ main {
 	opacity: 0;
 }
 
-.formulario__checkbox {
-	margin-right: 10px;
-}
+
 
 .formulario__grupo-terminos, 
 .formulario__mensaje,
@@ -123,9 +114,7 @@ main {
 	display: none;
 }
 
-.formulario__mensaje-exito-activo {
-	display: block;
-}
+
 
 /* ----- -----  Estilos para Validacion ----- ----- */
 .formulario__grupo-correcto .formulario__validacion-estado {

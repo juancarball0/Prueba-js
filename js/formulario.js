@@ -4,14 +4,15 @@ const inputs = document.querySelectorAll('#formulario input');
 const expresiones = {
 	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
 	dni: /^\d{8,11}$/, // 8 a 11 digitos.
+	dni2: /^\d{8,11}$/, // 8 a 11 digitos.
 	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	nickname: /^[a-zA-Z0-9\_\-]{4,16}$/ // 7 a 14 numeros.
 }
 
 const campos = {
 	nombre: false,
-	dni: false,
 	correo: false,
+	dni2: false,
 	nickname: false
 }
 
@@ -54,6 +55,7 @@ const validarCampo = (expresion, input, campo) => {
 	}
 }
 
+
 const validardni2 = () => {
 	const inputdni1 = document.getElementById('dni');
 	const inputdni2 = document.getElementById('dni2');
@@ -76,15 +78,18 @@ const validardni2 = () => {
 }
 
 inputs.forEach((input) => {
-	input.addEventListener('keyup', validarFormulario);
-	input.addEventListener('blur', validarFormulario);
+    input.addEventListener('keyup', validarFormulario);
+    input.addEventListener('blur', validarFormulario);
+});
+
+inputs.forEach((input) => {
+    input.addEventListener('keyup', validardni2);
+    input.addEventListener('blur', validardni2);
 });
 
 formulario.addEventListener('submit', (e) => {
-	e.preventDefault();
-
 	const terminos = document.getElementById('terminos');
-	if(campos.nombre && campos.dni && campos.correo && campos.nickname && terminos.checked ){
+	if(campos.nombre && campos.dni2 && campos.correo && campos.nickname && terminos.checked ){
 		formulario.reset();
 
 		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');

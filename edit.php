@@ -22,13 +22,10 @@
         $nickname = $_POST['nickname'];
 
         $query = "UPDATE validacion set nombre = '$nombre', dni = '$dni', correo = '$correo', nickname = '$nickname' WHERE id = $id";
-        $result = mysqli_query($conn, $query);
-        if (!$result){
-            die("Query Failed");
-        }
+        mysqli_query($conn, $query);
 
-        $_SESSION['message'] = 'form Updated Successfully';
-        $_SESSION['message_type'] = 'warning';
+        $_SESSION['message'] = 'User Updated Successfully';
+        $_SESSION['message_type'] = 'success';
         header("Location: index.php");
 
     }
@@ -37,45 +34,57 @@
 
 <?php include("includes/header.php") ?>
 
-<div class="container p-4">
-    <div class="row">
-        <div class="col-md-4 mx-auto">
-            <div class="card card-body">
 
-                <form action="edit.php?id=<?php echo $_GET['id']; ?>" method="POST">
-                    
+<div class="container-fluid">
+        <div class="row d-flex justify-content-center mt-4 m-1">
+                       
+            <div class="col-lg-5">
 
-                    <div class="form-group">
-                        <input type="text" placeholder="Dispositivo" name="dispositivo" class="form-control" value="<?php echo $dispositivo; ?>">
-                    </div>
+                <div class="card card-body">
+                    <form action="edit.php?id=<?php echo $_GET['id']; ?>" method="POST">
 
-                    <div class="form-group">
-                        <select class="form-select" name="modelo" aria-label="Default select example"  autofocusvalue="<?php echo $modelo; ?>">
-                            <option selected >g-1</option>
-                            <option value="1">g-2</option>
-                            <option value="2">g-3</option>
-                            <option value="3">g-4</option>
-                            <option value="4">g-5</option>
-                            <option value="5">g-6</option>
+                        <!-- Grupo: Nombre -->
+                        <div class="formulario__grupo" id="grupo__nombre">
+                            <label for="nombre" class="formulario__label">Nombre</label>
+                            <input type="text" class="formulario__input" name="nombre" value="<?php echo $nombre; ?>" id="nombre" placeholder="ingrese nom completo" autofocus>
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                            <p class="formulario__input-error">El nombre tiene que ser de 4 a 16 dígitos y solo puede contener  letras.</p>
+                        </div>
+
+                        <!-- Grupo: DNI -->
+                        <div class="formulario__grupo" id="grupo__dni">
+                            <label for="dni" class="formulario__label">DNI</label>
+                            <input type="text" class="formulario__input" name="dni" value="<?php echo $dni; ?>" id="dni" placeholder="ingrese nro dni">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                            <p class="formulario__input-error">El DNI tiene que ser de 8 a 11 dígitos.</p>
+                        </div>
+
+                        <!-- Grupo: Correo Electronico -->
+                        <div class="formulario__grupo" id="grupo__correo">
+                            <label for="correo" class="formulario__label">Correo Electrónico</label>
+                            <input type="email" class="formulario__input" name="correo" value="<?php echo $correo; ?>" id="correo" placeholder="correo@correo.com">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i> 
+                            <p class="formulario__input-error">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
+                        </div>
+
+                        <!-- Grupo: NickName -->
+                        <div class="formulario__grupo" id="grupo__nickname">
+                            <label for="nikname" class="formulario__label">NickName</label>
+                            <input type="text" class="formulario__input" name="nickname" value="<?php echo $nickname; ?>"  id="nickname" placeholder="Apodo">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                            
+                            <p class="formulario__input-error">El Apodo tiene qe ser no maximo de 14 dígitos.</p>
+                        </div>
+
+                       
                         
-                        </select>
-                    </div>
 
-                    <div class="form-group">
-                        <input type="text" placeholder="N° Serie" class="form-control" name="serie" value="<?php echo $serie; ?>">
-                    </div>
+                        <div class="formulario__grupo formulario__grupo-btn-enviar mt-2">
+                            <button type="submit" class="formulario__btn" name="update" >Update</button>
 
-                    <div class="form-group">
-                        <input type="file" name="img" class="form-control" name="img" value="<?php echo $img; ?>" autofocus->
-                    </div>
-
-                    <button class="btn btn-success" name="update"> Update </button>
-
-                </form>
-
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-    </div>
-</div>
 
 <?php include("includes/footer.php") ?>

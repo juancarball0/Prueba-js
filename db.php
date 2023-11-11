@@ -6,7 +6,7 @@ $conn = mysqli_connect(
     'localhost',
     'root',
     '',
-    'prueba_js'
+    'crud-js'
 );
 
 ?>
